@@ -1,0 +1,304 @@
+/* css */
+/* 全体の設定 */
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+body{
+    margin: 0;
+    font-size: 62.5%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* header */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    font-weight: bold;
+}
+
+header a{
+    color: black;
+    text-decoration: none;
+}
+
+header a:hover{
+    color: red;
+}
+
+header li{
+    list-style: none;
+    font-size: 1.3rem;
+}
+
+header nav,header ul{
+    display: flex;
+}
+
+header ul li{
+    margin-right: 2rem;
+}
+
+
+/* ハンバーガーメニュー */
+.button{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 3;
+    display: none;
+}
+
+.button span{
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    height: 2px;
+    background-color: #000000;
+    transition: 0.5s;
+}
+
+.button span:nth-of-type(1){
+    top: 20px;
+}
+
+.button span:nth-of-type(2){
+    top: 30px;
+}
+
+.button span:nth-of-type(3){
+    top: 40px;
+}
+
+.button.open span:nth-of-type(1){
+    transform:translateY(10px) rotate(45deg);
+}
+
+.button.open span:nth-of-type(2){
+    opacity: 0;
+}
+
+.button.open span:nth-of-type(3){
+    transform:translateY(-10px) rotate(-45deg);
+}
+
+.box{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: skyblue;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.box.open{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.item{
+    margin: 0 auto;
+    z-index: 3;
+}
+
+.item ul{
+  padding-left: 0;
+  margin-top: 50px;
+  list-style:none;
+  text-align: center;
+}
+
+.item ul li{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* スライダー */
+.swiper-wrapper{
+    text-align: center;
+    z-index: 1;
+    margin-bottom: 10%;
+}
+
+
+.swiper-slide img{
+    width: 90%;
+    height: 800px;
+    object-fit: cover;
+}
+
+/* メイン */
+main{
+    font-size: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.futuremain{
+    /* text-align: center; */
+}
+
+/* 魅力 */
+.charm,.fine,.delicious,.live{
+    display: flex;
+}
+
+.charm_text,.charm_img,.fine_text,.fine_img.delicious_text,.delicious_img,.live_text,.live_img{
+    width: 50%;
+}
+
+.charm_text,.fine_text,.delicious_text,.live_text{
+   margin: auto 0;
+}
+.dekirukoto_text{
+    width: 100%;
+}
+
+.charm_text h1,.fine_text h2,.more_charm h2,.delicious_text h2,.live_text,.more_charm p{
+    text-align: center;
+}
+
+.charm_img img{
+    width: 100%;
+}
+
+.fine_img img{
+    width: 100%;
+}
+
+.delicious_img img{
+    width: 100%;
+}
+
+.live_img img{
+    width: 100%;
+}
+
+span{
+    color: red;
+
+}
+
+.more_charm_img{
+    text-align: center;
+}
+
+.more_charm_img img{
+    padding: 10px;
+    width: 45%;
+}
+
+.tengura{
+    display: block; /* 横並びを解除する */
+    display: flex; /* 縦並びでグループ化する */
+    flex-direction: column; /* 順番を変える許可を出す */
+    /* margin: 0 auto; 中央に寄せる */
+}
+
+.tengura_text{
+    order: 1; /* 順番を一番目にする */
+}
+
+.tengura_img{
+    width: 50%;
+    order: 2; /* 順番を二番目にする */
+}
+
+.tengura_img img{
+    width: 50%;
+}
+
+.hiroshima,.tengura,.tensyutu,.dekirukoto{
+    width: 100%;
+}
+
+.hiroshima h1,.tengura h2,.tensyutu h2,.dekirukoto h2{
+    text-align: center;
+}
+
+.tengura_img{
+    width: 100%;
+    text-align: center;
+}
+
+
+.fine_img,.delicious_img,.live_img,.charm_img,.delicious_text,.live_text,.charm_text,.fine_text{
+    width: 50%;
+} 
+
+/* footer */
+footer{
+    text-align: center;
+}
+
+/* レスポンシブ対応 　ここから*/
+@media screen and (max-width:960px) {
+    .swiper-slide img{
+        width: 90%;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .button{
+        display: block;
+    }
+    
+    header{
+        display: none;
+    }
+
+    .charm,.delicious{
+        display: block; /* 横並びを解除する */
+        /* margin: 0 auto; 中央に寄せる */
+    }
+
+    .fine,.live{
+        display: block; /* 横並びを解除する */
+        display: flex; /* 縦並びでグループ化する */
+        flex-direction: column; /* 順番を変える許可を出す */
+        /* margin: 0 auto; 中央に寄せる */
+    }
+    
+    .fine_text,.live_text{
+        order: 1; /* 順番を一番目にする */
+    }
+
+    .fine_img,.live_img{
+        order: 2; /* 順番を二番目にする */
+        /* width: 50%; */
+    }
+
+    .charm_text,.fine_text,.delicious_text,.live_text{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: left;
+    }
+
+    .charm_img,.fine_img,.delicious_img,.live_img{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .guruoko{
+        width: 50%;
+    }
+}
+
+
+
+@media screen and (max-width:480px) {
+    .swiper-slide img{
+        width: 90%;
+        height: 200px;
+        object-fit: cover;
+    }
+}
