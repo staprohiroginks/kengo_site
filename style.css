@@ -142,9 +142,9 @@ main{
     max-width: 1200px;
     margin: 0 auto;
 }
-.futuremain{
-    /* text-align: center; */
-}
+/* .futuremain{
+    text-align: center;
+} */
 
 /* 魅力 */
 .charm,.fine,.delicious,.live{
@@ -239,6 +239,57 @@ footer{
     text-align: center;
 }
 
+/* フェードイン用設定 */
+.fade-in {
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 0.6s,transform 0.6s; 
+}
+
+.fade-in.show {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* 先頭のフェードイン設定 */
+
+.topfade-in {
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 0.6s,transform 0.6s; 
+}
+
+.topfade-in.show {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* 一番上に戻るアレ */
+.arrow {
+    position: fixed; /* 画面の決まった位置に固定 */
+    bottom: 20px; /* 画面下から20pxの位置に配置 */
+    right: 20px; /* 画面右から20pxの位置に配置 */
+    background-color: #333; /* 背景色を暗いグレーに設定 */
+    color: #fff; /* テキストの色を白に設定 */
+    border-radius: 50%; /* 丸みを50%にする（要素を丸にする） */
+    width: 50px; /* 幅を50pxに設定 */
+    height: 50px; /* 高さを50pxに設定 */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* コンテンツを水平方向に中央寄せ */
+    align-items: center; /* コンテンツを垂直方向に中央寄せ */
+    cursor: pointer; /* カーソルをポインタに変更（クリック可能なことを示す） */
+}
+
+.arrow p {
+    margin: 0; /* 余白をなくす */
+    font-size: 20px; /* フォントサイズを20pxに設定 */
+    font-weight: bold; /* フォントを太字に設定 */
+}
+
+.arrow:hover {
+    opacity: 0.9; /* ホバー時に少し透明にする */
+}
+
 /* レスポンシブ対応 　ここから*/
 @media screen and (max-width:960px) {
     .swiper-slide img{
@@ -293,7 +344,13 @@ footer{
     }
 }
 
-
+@media screen and (max-width:650px) {
+    .swiper-slide img{
+        width: 90%;
+        height: 300px;
+        object-fit: cover;
+    }
+}
 
 @media screen and (max-width:480px) {
     .swiper-slide img{
@@ -301,4 +358,55 @@ footer{
         height: 200px;
         object-fit: cover;
     }
+}
+
+/* クイズゲーム */
+/* .quizmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+} */
+
+.quizh1 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.quizContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quizp {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #444;
+}
+
+.quizbutton {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#result {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
 }
